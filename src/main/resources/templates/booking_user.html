@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Parking Slot</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://e0.pxfuel.com/wallpapers/806/524/desktop-wallpaper-parking-lot-background.jpg'); /* Replace 'background.jpg' with your image file */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 500px;
+            background-color: darkgrey;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            margin-left: 100px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"]{
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        select {
+            width: 75%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            appearance: none;
+            background-image: url('arrow-down.png'); /* Replace 'arrow-down.png' with your image file */
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 30%;
+            font-size: 16px;
+            margin-left: 170px;
+            
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Book Parking Slot</h2>
+        <form action="bookUserSlot" method="post">
+            <div class="form-group">
+                <label for="vehicleno">Vehicle Number:</label>
+                <input type="text" id="vehicleno" name="vehicleno" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="cost">Parking Cost per Hour:</label>
+                <input type="number" id="cost" name="cost" min="0" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Parking Time (hours):</label>
+                <input type="number" id="time" name="time" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="slot">Slot:</label>
+                <select id="slot" name="slot" required>
+                    <option value="select">Select</option>
+                    <option value="morning">Morning</option>
+                    <option value="evening">Evening</option>
+                    <option value="night">Night</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+            <button type="submit">Book Slot</button>
+        </form>
+    </div>
+</body>
+</html>
